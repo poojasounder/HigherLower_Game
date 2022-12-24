@@ -20,13 +20,13 @@ def check_answer(option, followers_A, followers_B):
 
 print(logo)
 should_continue = True;
-
+choice_dict_B = generate_random_choice(data)
 while should_continue:
-    choice_dict_A = generate_random_choice(data)
+    choice_dict_A = choice_dict_B
     print(f"Compare A: {choice_dict_A['name']}, {choice_dict_A['description']}, from {choice_dict_A['country']}")
     print(vs)
     choice_dict_B = generate_random_choice(data)
-    print(f"Compare B: {choice_dict_B['name']}, {choice_dict_B['description']}, from {choice_dict_B['country']}")
+    print(f"Against B: {choice_dict_B['name']}, {choice_dict_B['description']}, from {choice_dict_B['country']}")
     answer = input("Who has more followers? Type 'A' or 'B': ")
     if check_answer(answer, choice_dict_A['follower_count'], choice_dict_B['follower_count']) == True:
         should_continue = True
